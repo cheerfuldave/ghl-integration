@@ -1,0 +1,5 @@
+[safe]
+	directory = /home/jovyan
+[user]
+	email = bot@julius.ai
+	name = Julius Bot

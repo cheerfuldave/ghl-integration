@@ -1,0 +1,35 @@
+Here are the key implementation details related to the GHL integration:
+
+## GHL Integration
+
+### Overview
+The `GHLIntegration` class is designed to integrate with both the GHL (GoHighLevel) platform and OpenAI's API. It processes user messages, retrieves AI-generated responses, and interacts with the GHL platform to generate responses.
+
+### Methods
+
+#### `processMessage(message: string)`
+- This method takes a user message as input.
+- It sends the message to the OpenAI API to generate an AI response.
+- It also sends the message to the GHL platform and retrieves the GHL response.
+- The method returns an object containing both the AI response and the GHL response.
+
+#### `sendToGHL(message: string)`
+- This private method is responsible for sending data to the GHL platform.
+- The implementation of this method is mocked during testing.
+
+### GHL Platform Integration
+The class interacts with the GHL platform to generate responses. The specific implementation details of the `sendToGHL` method are not provided in the code snippet, but it is mentioned that this method is responsible for sending data to the GHL platform.
+
+### OpenAI Integration
+The class integrates with the OpenAI API to generate AI responses. It retrieves the OpenAI API key from the environment variable `OPENAI_API_KEY` and initializes an OpenAI assistant instance using this key.
+
+### Error Handling
+The class includes robust error handling for missing environment variables and API errors. If the `OPENAI_API_KEY` environment variable is not set, the class will throw an error. Additionally, any errors that occur during the API calls are caught and propagated.
+
+### Testing
+The implementation is tested using Jest with the following test cases:
+
+1. **Successful Message Processing**: Verifies that the class processes a message and returns both AI and GHL responses.
+2. **Error Handling**: Ensures that the class handles API errors gracefully.
+
+The test code mocks the OpenAI module and the `sendToGHL` method to test the class's functionality.

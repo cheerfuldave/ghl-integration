@@ -1,0 +1,47 @@
+0 verbose cli /opt/conda/bin/node /opt/conda/bin/npm
+1 info using npm@10.1.0
+2 info using node@v20.9.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/opt/conda/lib/node_modules/npm/npmrc Completed in 2ms
+6 timing config:load:builtin Completed in 2ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:project Completed in 1ms
+10 timing config:load:file:/home/jovyan/.npmrc Completed in 0ms
+11 timing config:load:user Completed in 0ms
+12 timing config:load:file:/opt/conda/etc/npmrc Completed in 0ms
+13 timing config:load:global Completed in 0ms
+14 timing config:load:setEnvs Completed in 1ms
+15 timing config:load Completed in 8ms
+16 timing npm:load:configload Completed in 8ms
+17 timing config:load:flatten Completed in 1ms
+18 timing npm:load:mkdirpcache Completed in 1ms
+19 timing npm:load:mkdirplogs Completed in 0ms
+20 verbose title npm run dev
+21 verbose argv "run" "dev"
+22 timing npm:load:setTitle Completed in 0ms
+23 timing npm:load:display Completed in 1ms
+24 verbose logfile logs-max:10 dir:/home/jovyan/.npm/_logs/2025-01-13T21_25_44_625Z-
+25 verbose logfile /home/jovyan/.npm/_logs/2025-01-13T21_25_44_625Z-debug-0.log
+26 timing npm:load:logFile Completed in 7ms
+27 timing npm:load:timers Completed in 0ms
+28 timing npm:load:configScope Completed in 0ms
+29 timing npm:load Completed in 30ms
+30 timing command:run Completed in 50ms
+31 verbose stack Error: Could not read package.json: Error: ENOENT: no such file or directory, open '/home/jovyan/package.json'
+32 verbose cwd /home/jovyan
+33 verbose Linux 6.6.56+
+34 verbose node v20.9.0
+35 verbose npm  v10.1.0
+36 error code ENOENT
+37 error syscall open
+38 error path /home/jovyan/package.json
+39 error errno -2
+40 error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/home/jovyan/package.json'
+41 error enoent This is related to npm not being able to find a file.
+41 error enoent
+42 verbose exit -2
+43 timing npm Completed in 109ms
+44 verbose code -2
+45 error A complete log of this run can be found in: /home/jovyan/.npm/_logs/2025-01-13T21_25_44_625Z-debug-0.log

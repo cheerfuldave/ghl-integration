@@ -1,0 +1,3 @@
+Endpoint,HTTP Method,Required Headers
+processMessage,POST,Content-Type: application/json
+sendToGHL,POST,Content-Type: application/json

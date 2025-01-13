@@ -1,0 +1,48 @@
+Here are the key implementation details of the `GHLIntegration` class:
+
+## Class Structure
+```typescript
+export class GHLIntegration {
+    private assistant: OpenAI;
+
+    constructor() {
+        // ...
+    }
+
+    async processMessage(message: string) {
+        // ...
+    }
+
+    private async sendToGHL(message: string) {
+        // ...
+    }
+}
+```
+
+## Dependencies
+The class requires the following dependencies:
+- `openai` library for interacting with the OpenAI API
+
+## Methods
+
+1. **Constructor**:
+   - Initializes the `OpenAI` assistant instance using the `OPENAI_API_KEY` environment variable.
+   - Throws an error if the `OPENAI_API_KEY` is not set.
+
+2. **`processMessage(message: string)`**:
+   - Sends the user message to the OpenAI API and retrieves the AI-generated response.
+   - Calls the `sendToGHL` method to interact with the GHL platform.
+   - Returns an object with the AI response and the GHL response.
+   - Handles any errors that occur during the process.
+
+3. **`sendToGHL(message: string)`**:
+   - Responsible for sending the message to the GHL platform.
+   - This method is currently mocked and returns a success response.
+
+## Types and Interfaces
+The code does not define any custom TypeScript interfaces or types. It uses the following types:
+- `string` for the message parameter
+- `{ aiResponse: string; ghlResponse: { status: string; message: string } }` as the return type for the `processMessage` method
+
+## LaTeX Equations
+There are no LaTeX equations in the provided code.

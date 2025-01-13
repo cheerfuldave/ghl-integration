@@ -1,0 +1,13 @@
+{
+  "deployment": {
+    "deploy.sh": "#!/bin/bash\n# Install dependencies\nnpm install\n\n# Build the project\nnpm run build\n\n# Deploy using Vercel CLI with environment variables\nvercel deploy --prod \\\n  --env OPENAI_API_KEY=$OPENAI_API_KEY \\\n  --env PRIVATE_INTEGRATION_API_KEY=$PRIVATE_INTEGRATION_API_KEY \\\n  --env PRIVATE_INTEGRATION_API_URL=$PRIVATE_INTEGRATION_API_URL \\\n  --env GHL_LOCATION_ID=$GHL_LOCATION_ID\n",
+    "vercel.json": "\n{\n    \"version\": 2,\n    \"builds\": [\n        {\n            \"src\": \"dist/index.js\",\n            \"use\": \"@vercel/node\"\n        }\n    ],\n    \"routes\": [\n        {\n            \"src\": \"/(.*)\",\n            \"dest\": \"dist/index.js\"\n        }\n    ],\n    \"env\": {\n        \"NODE_ENV\": \"production\"\n    }\n}\n"
+  },
+  "source": {
+    "types.ts": "\nexport interface GHLIntegrationConfig {\n    apiKey: string;\n    locationId: string;\n    apiUrl: string;\n}\n\nexport interface GHLResponse {\n    success: boolean;\n    data?: any;\n    error?: string;\n}\n\nexport interface WebhookPayload {\n    event: string;\n    data: any;\n}\n"
+  },
+  "config": {
+    "tsconfig.json": "\n{\n    \"compilerOptions\": {\n        \"target\": \"es2018\",\n        \"module\": \"commonjs\",\n        \"outDir\": \"./dist\",\n        \"rootDir\": \"./src\",\n        \"strict\": true,\n        \"esModuleInterop\": true,\n        \"skipLibCheck\": true,\n        \"forceConsistentCasingInFileNames\": true\n    },\n    \"include\": [\"src/**/*\"],\n    \"exclude\": [\"node_modules\", \"**/*.test.ts\"]\n}\n",
+    "package.json": "\n{\n    \"name\": \"ghl-integration\",\n    \"version\": \"1.0.0\",\n    \"scripts\": {\n        \"dev\": \"ts-node src/index.ts\",\n        \"build\": \"tsc\",\n        \"start\": \"node dist/index.js\",\n        \"test\": \"jest\"\n    },\n    \"dependencies\": {\n        \"@types/express\": \"^4.17.17\",\n        \"@types/node\": \"^18.15.11\",\n        \"express\": \"^4.18.2\",\n        \"openai\": \"^4.0.0\",\n        \"typescript\": \"^5.0.4\"\n    },\n    \"devDependencies\": {\n        \"@types/jest\": \"^29.5.0\",\n        \"jest\": \"^29.5.0\",\n        \"ts-jest\": \"^29.1.0\",\n        \"ts-node\": \"^10.9.1\"\n    }\n}\n"
+  }
+}

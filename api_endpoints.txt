@@ -1,0 +1,74 @@
+Based on the provided code, the following API endpoints and their details can be extracted:
+
+## API Endpoints
+
+### OpenAI Chat Completions
+
+**Endpoint**: `/chat/completions`
+
+**Method**: `POST`
+
+**Required Parameters**:
+- `model`: The language model to use for generating the response. In this case, it is set to `'gpt-4'`.
+- `messages`: An array of message objects, where each object has a `role` (either `'user'` or `'assistant'`) and `content` properties.
+
+**Authentication**:
+- The OpenAI API key is required, which is retrieved from the environment variable `OPENAI_API_KEY`.
+
+**Example Request**:
+```json
+{
+    "model": "gpt-4",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Test message"
+        }
+    ]
+}
+```
+
+**Example Response**:
+```json
+{
+    "choices": [
+        {
+            "message": {
+                "content": "AI Response"
+            }
+        }
+    ]
+}
+```
+
+### GHL Platform Integration
+
+**Endpoint**: Not specified in the code
+
+**Method**: Not specified in the code
+
+**Required Parameters**:
+- The code does not specify the required parameters for the GHL platform integration.
+
+**Authentication**:
+- The implementation details for the GHL platform integration are not provided in the code.
+
+**Example Response**:
+```json
+{
+    "status": "success",
+    "message": "Message processed by GHL"
+}
+```
+
+## Testing
+
+The provided test code covers the following scenarios:
+
+1. **Successful Message Processing**:
+   - Verifies that the `GHLIntegration` class processes a message and returns both AI and GHL responses.
+
+2. **Error Handling**:
+   - Ensures that the `GHLIntegration` class handles API errors gracefully.
+
+The test code uses Jest to mock the OpenAI module and set the environment variable `OPENAI_API_KEY` to a test value.

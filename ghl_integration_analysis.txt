@@ -1,0 +1,9 @@
+The provided text does not contain any details related to API token permissions, subaccount restrictions, or configuration requirements for creating contacts. The text is focused on the implementation of a `GHLIntegration` class that integrates with the GHL (GoHighLevel) platform and OpenAI's API. The key details extracted from the text are:
+
+1. **Environment Variable Configuration**: The class retrieves the OpenAI API key from the environment variable `OPENAI_API_KEY`.
+2. **OpenAI Assistant Initialization**: The class initializes an OpenAI assistant instance using the provided API key.
+3. **Message Processing**: The `processMessage` method sends the user message to OpenAI for a response and also interacts with the GHL platform to generate a GHL response.
+4. **Error Handling**: The class includes robust error handling for missing environment variables and API errors.
+5. **sendToGHL Method**: This method is responsible for sending data to the GHL platform and is mocked during testing.
+
+The text does not mention any details related to API token permissions, subaccount restrictions, or configuration requirements for creating contacts.

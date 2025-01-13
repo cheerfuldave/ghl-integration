@@ -1,0 +1,5 @@
+Based on the provided code, there are no explicit details about the authentication requirements or token format for the GHL API integration. The code only mentions that the `GHLIntegration` class is designed to integrate with the GHL platform, but it does not provide any specific information about the GHL API integration.
+
+The code does not contain any information about the header format or the private integration token required for the GHL API. The `sendToGHL` method is mocked, and the actual implementation for sending data to the GHL platform is not shown.
+
+Without additional information about the GHL API integration, I cannot extract the exact authentication requirements and token format. The code provided focuses on the integration with the OpenAI API and does not cover the details of the GHL API integration.
