@@ -1,0 +1,52 @@
+# GoHighLevel API Integration Notes
+
+## Base URL
+https://services.leadconnectorhq.com
+
+## Required Headers
+- Authorization: Bearer <API_TOKEN>
+- Version: 2021-07-28
+- Content-Type: application/json
+
+## Endpoints
+### Contacts
+- GET /contacts - List contacts
+- POST /contacts - Create contact
+- GET /contacts/{id} - Get contact details
+- PUT /contacts/{id} - Update contact
+- DELETE /contacts/{id} - Delete contact
+
+### Tags
+- Tags are managed through contact endpoints
+- Include tags array in POST/PUT requests
+
+### Authentication
+- Bearer token required for all requests
+- Token must have appropriate permissions
+- Location ID required for most operations
+
+## Example API Configuration
+```javascript
+const BASE_URL = 'https://services.leadconnectorhq.com';
+
+export class GHLIntegration {
+    constructor() {
+        this.apiKey = process.env.PRIVATE_INTEGRATION_API_KEY;
+        this.locationId = process.env.GHL_LOCATION_ID;
+    }
+
+    async fetchGHLData(endpoint, method = 'GET', data = null) {
+        const url = `${BASE_URL}${endpoint}?locationId=${this.locationId}`;
+        const response = await fetch(url, {
+            method,
+            headers: {
+                'Authorization': `Bearer ${this.apiKey}`,
+                'Version': '2021-07-28',
+                'Content-Type': 'application/json'
+            },
+            body: data ? JSON.stringify(data) : undefined
+        });
+        return await response.json();
+    }
+}
+```
